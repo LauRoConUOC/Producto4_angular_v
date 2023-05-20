@@ -1,0 +1,67 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="body"> 
+  <header>
+    <h1>AVATAR</h1>
+    <div class="search-box">
+        <input type="text" placeholder="Buscar por Nombre" [(ngModel)]="nombre">
+          <div class="genero">
+            <span class="pipesg">Género:</span>
+            <input type="checkbox" [(ngModel)]="masculino"> Masculino
+            <input type="checkbox" [(ngModel)]="femenino"> Femenino
+          </div>
+          
+        <select  id="paisActor" name="paisActor" [(ngModel)]="pais">
+          <option value= "" disabled selected>Selecciona un país...</option>
+          <option value="">Todos</option>
+          <option value="Estados Unidos">Estados Unidos</option>
+          <option value="Reino Unido">Reino Unido</option>
+          <option value="España">España</option>
+          <option value="Australia">Australia</option>
+          <option value="Guyana">Guayana</option>
+          <option value="Nueva Zelanda">Nueva Zelanda</option>
+        </select>
+    </div>
+  </header>
+
+<div class="content" role="main">
+    <div class="columnas">
+      <div class="left-side">
+        <app-actors (actorClicado)="recibirActorClicado($event)" [nombre]="nombre" [pais]="pais" [masculino]="masculino" [femenino]="femenino"></app-actors>
+      </div>
+      <div class="columna-segunda"> 
+        <app-player [actores]="actores" [actorClicado]="actorClicado"></app-player>
+        <app-detail [actor]="actorClicado"> </app-detail>
+      </div>
+  </div>
+</div>
+
+<footer>
+  <a href="https://sites.google.com/uoc.edu/appdev/home">
+  <p><strong>APPDEV</strong></p>
+</a>
+</footer>
+
+
+
+    
+
+    <!--
+    <div class="right-side">
+    <app-player></app-player>
+    <app-detail></app-detail>
+    </div>
+    -->
+  
+
+    
+  
+  
+
+<!-- Div class video-card y class actor-info-card van en un mismo DIV contenedor "right-side" -->

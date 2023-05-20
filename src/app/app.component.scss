@@ -1,0 +1,162 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+.body {
+    position: relative;
+    background-image: url('../assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100%;
+    min-width: 500px;
+  
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-left: auto;
+}
+header select{
+    width: 30px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%; 
+    margin-left: 1em;
+}
+.genero{
+    min-width: 250px;
+}
+.search-box input[type="text"] {
+    width: 20em; 
+    margin-right: 3em;
+}
+.pipesg{
+    margin-right: 1em;
+}
+
+.search-box select{
+    margin-left: 6em;
+    margin-right: 3em;
+    width: 20em;
+}
+.body {
+    position: relative;
+    background-image: url('../assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.columnas {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    justify-content: space-evenly;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+}
+
+footer p {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:visited {
+    color: #fff;
+}
+
+.pais-label {
+    margin-right: 5px;
+}
+
+@media (min-width: 1001px) and (max-width: 1244px) {
+    .imagen-nesflis[_ngcontent-bts-c1]   img[_ngcontent-bts-c1] {
+        width: 637px;
+    }
+    .columnas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+@media (max-width: 1000px) {
+    header {
+        height: 5em;
+        align-items: center;
+    }
+
+    .search-box {
+        margin-right: 10em;
+        margin-top: 10em;
+    }
+
+    .columnas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .left-side {
+        margin-top: 3em;
+    }
+
+    .genero {
+        margin: -84px;
+        margin-right: -14em;
+    }
+}
+@media (max-width: 800px) {
+
+    header {
+        height: 5em;
+        align-items: center;
+    }
+
+    
+}
+@media (max-width: 500px) {
+    header {
+        height: 5em;
+        align-items: center;
+    }
+
+   main{
+    height: 100%;
+   }
+}

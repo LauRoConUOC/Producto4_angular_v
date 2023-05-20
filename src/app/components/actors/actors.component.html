@@ -1,0 +1,13 @@
+<div class="actor-card">
+  <h2>ACTORES</h2>
+  <button class="nuevo-actor" (click)="onNuevoActor()">Añadir nuevo actor</button>
+  <ul class="lista-reparto">
+    <li *ngFor="let actor of (actores | filterPais:pais | filterGenero:{masculino: masculino, femenino: femenino} | filternombre:nombre); let i = index" class="actor">
+      <div (click)="enviarActorClicado(actor)" class="actor-item">
+        {{actor.nombre}}
+        <i class="bi bi-trash-fill small-icon" (click)="eliminarActor(actor, i, $event)"></i>
+      </div>
+    </li>
+  </ul>
+</div>
+

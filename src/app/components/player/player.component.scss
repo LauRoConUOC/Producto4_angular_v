@@ -1,0 +1,96 @@
+.titulo-actor {
+    color: white;
+}
+.columna-segunda {
+    margin-bottom: 10em;
+}
+.imagen-nesflis img {
+    margin-top: 9em;
+    height: auto;
+    width: 879px;
+    opacity: 0.8;
+    border-radius: 10px;
+    margin-top: 0;
+}
+
+.video-card {
+    align-content: center;
+    justify-self: center;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.639));
+}
+
+.detail {
+    margin: 2em 0 10em 0;
+}
+.video-wrapper {
+    position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  overflow: hidden;
+  }
+
+.video-actor {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@media (min-width: 1001px) and (max-width: 1244px) {
+    .imagen-nesflis img {
+        width: 800px;
+    }
+    .video-card video {
+        margin-top: 2em;
+    }
+}
+
+@media (max-width: 1000px) {
+    .imagen-nesflis img {
+        width: 600px;
+    }
+    .video-card video {
+        margin-top: 2em;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 560px) {
+    .imagen-nesflis img {
+        width: 600px;
+    }
+    .video-card video {
+        margin-top: 2em;
+    }
+}
+
+@media (max-width: 657px) and (min-width: 559px) {
+    .video-card video {
+        width: 500px;
+        margin-top: 2em;
+    }
+   
+}
+
+@media (max-width: 559px) and (min-width: 400px) {
+    .imagen-nesflis img {
+        width: 400px;
+        margin-bottom: 5em;
+    }
+
+    .video-card video {
+        width: 400px;
+        margin-top: 2em;
+    }
+}
+
+@media (max-width: 399px) {
+    
+   
+    .imagen-nesflis img {
+        width: 300px;
+        
+    }
+    .imagen-nesflis{
+        margin-bottom: 5em;
+    }
+
+    
+}

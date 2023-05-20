@@ -1,0 +1,54 @@
+.actor-card {
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: rgba(245, 245, 245, 0.6);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 80%);
+    width: 364px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actor-card h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.actor-card ul {
+    list-style: none;
+    position: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.actor-card li {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    cursor:pointer;
+}
+
+i:hover{
+    resize: 1.2;
+}
+.small-icon {
+    font-size: 1rem; 
+  }
+
+.small-icon:hover{
+    cursor: pointer;
+    font-size: 1.1rem; 
+}
+
+.nuevo-actor{
+    border-radius: 0.5em;
+    padding:0.2em 2em ;
+    margin-bottom: 1em;
+    border: none;
+    box-shadow: 0 5px 5px rgb(0 0 0 / 70%);
+}
+.nuevo-actor:hover{
+    background-color: rgba(255, 0, 0, 0.626);
+    color: #ffff;
+    cursor:pointer;
+}

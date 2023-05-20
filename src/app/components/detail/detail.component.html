@@ -1,0 +1,56 @@
+<ng-template [ngIf]="actor">
+  <div>
+    <div class="detail">
+      <div class="bloquea">
+        <div class="foto-actor">
+          <img [src]="actor.foto" alt="{{actor.nombre}}">
+        </div>
+        <i class="bi bi-pencil-square " (click)="activarEdicion()">Editar</i>
+      </div>
+      <div class="bloqueb">
+        <ng-container *ngIf="!editando; else editableFields">
+          <div class="nombre-actor field">
+            <strong> Nombre: </strong> <span>{{actor.nombre}}</span>
+          </div>
+          <div class="nacionalidad-actor field">
+            <strong> Nacionalidad: </strong> <span>{{actor.nacionalidad}}</span>
+          </div>
+          <div class="edad-actor field">
+            <strong> Edad: </strong> <span>{{actor.edad}}</span>
+          </div>
+          <div class="descripcion-actor field">
+            <strong> Descripción: </strong> <span>{{actor.descripcion}}</span>
+          </div>
+          <div class="activo-actor field">
+            <strong> Años en activo: </strong> <span>{{actor.activo}}</span>
+          </div>
+        </ng-container>
+        <ng-template #editableFields>
+          <ng-container *ngIf="actorEditado">
+            <div class="nombre-actor field">
+              <strong> Nombre: </strong> <input [(ngModel)]="actorEditado.nombre" />
+            </div>
+            <div class="nacionalidad-actor field">
+              <strong> Nacionalidad: </strong> <input [(ngModel)]="actorEditado.nacionalidad" />
+            </div>
+            <div class="edad-actor field">
+              <strong> Edad: </strong> <input [(ngModel)]="actorEditado.edad" type="number" />
+            </div>
+            <div class="descripcion-actor field">
+              <strong> Descripción: </strong> <textarea [(ngModel)]="actorEditado.descripcion"></textarea>
+            </div>
+            <div class="activo-actor field">
+              <strong> Años en activo: </strong> <input [(ngModel)]="actorEditado.activo" type="text" />
+            </div>
+            <input  style="display: none;" type="file" id="foto" accept="image/*" (change)="uploadFile($event, 'foto')" #fotoInput>
+            <button class="subirbutton" (click)="selectFile(fotoInput)">Subir foto</button>
+            <input  style="display: none;" type="file" id="video" accept="video/*" (change)="uploadFile($event, 'video')" #videoInput>
+            <button class="subirbutton" button (click)="selectFile(videoInput)">Subir video</button>
+            <i class="bi bi-check-square-fill aceptar" (click)="guardarCambios()"></i>
+            <i class="bi-x-square-fill cancelar" (click)="cancelarEdicion()"></i>
+          </ng-container>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</ng-template>

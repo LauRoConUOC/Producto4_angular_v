@@ -1,0 +1,16 @@
+<ng-template [ngIf]="!actorClicado">
+    <div class="imagen-nesflis">
+      <img id="imagen" src="../../../assets/nesflis.png">
+    </div>
+  </ng-template>
+  
+  <ng-template [ngIf]="actorClicado">
+    <div>
+      <div class="video-card">
+        <div class="video-wrapper">
+          <video class="video-actor" *ngIf="actorClicado" [src]="actorClicado.video" controls autoplay loop></video>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  
