@@ -2,6 +2,8 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Actor } from 'src/app/models/actor';
 import { FirestoreService } from '../../services/firestore.service';
 import { Router } from '@angular/router';
+import { AngularFireMessaging } from '@angular/fire/compat/messaging';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-actors',
@@ -19,12 +21,40 @@ export class ActorsComponent implements OnInit {
   @Output() editarActor: EventEmitter<Actor> = new EventEmitter<Actor>();
   @Output() nuevoActor: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private firestoreService: FirestoreService, private router: Router) {}
+  constructor(
+    private firestoreService: FirestoreService,
+    private router: Router,
+    private afMessaging: AngularFireMessaging,
+    private http: HttpClient  // Añade HttpClient aquí
+  ) { }
 
   ngOnInit() {
     this.getActorsFromFirestore();
+    this.setupPushNotifications();
   }
 
+
+  setupPushNotifications() {
+    this.afMessaging.requestToken.subscribe(
+      (token) => {
+        console.log("Permiso concedido!", token);
+
+        // Utiliza HttpClient para hacer una solicitud POST a la función
+        this.http.post('https://us-central1-appdev-producto-2.cloudfunctions.net/subscribeToTopic', { token: token, topic: 'actors' })
+          .toPromise()
+          .then(res => console.log('Subscribed to topic', res))
+          .catch(err => console.error('Subscription error', err));
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+
+    this.afMessaging.messages.subscribe((message) => {
+      console.log(message);
+    });
+  }
+ 
   enviarActorClicado(actor: Actor): void {
     this.actorClicado.emit(actor);
   }

@@ -1,3 +1,5 @@
+// app.module.ts
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -12,8 +14,10 @@ import { FilternombrePipe } from './pipes/filternombre.pipe';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
+import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
 import { environment } from '../environments/environment';
+import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
+import { HttpClientModule } from '@angular/common/http';
 
 const firebaseConfig = environment.firebase;
 
@@ -32,6 +36,9 @@ const firebaseConfig = environment.firebase;
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    AngularFireMessagingModule,  
+    AngularFireFunctionsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
