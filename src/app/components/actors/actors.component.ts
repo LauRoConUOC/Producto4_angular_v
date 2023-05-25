@@ -25,7 +25,7 @@ export class ActorsComponent implements OnInit {
     private firestoreService: FirestoreService,
     private router: Router,
     private afMessaging: AngularFireMessaging,
-    private http: HttpClient  // Añade HttpClient aquí
+    private http: HttpClient  
   ) { }
 
   ngOnInit() {
@@ -39,7 +39,6 @@ export class ActorsComponent implements OnInit {
       (token) => {
         console.log("Permiso concedido!", token);
 
-        // Utiliza HttpClient para hacer una solicitud POST a la función
         this.http.post('https://us-central1-appdev-producto-2.cloudfunctions.net/subscribeToTopic', { token: token, topic: 'actors' })
           .toPromise()
           .then(res => console.log('Subscribed to topic', res))
